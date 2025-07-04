@@ -1,0 +1,34 @@
+[gd_scene load_steps=3 format=3 uid="uid://c0qr1750wrla1"]
+
+[ext_resource type="Script" uid="uid://vky1n0xn1nuu" path="res://map.gd" id="1_c7s6e"]
+[ext_resource type="Script" uid="uid://dnaw2pyn7dtjh" path="res://camera_3d.gd" id="2_wijl4"]
+
+[node name="Map" type="Node3D"]
+script = ExtResource("1_c7s6e")
+size = 10000
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.952889, 0.303318, 0, -0.303318, 0.952889, 0, 5.3223, 8.33447)
+script = ExtResource("2_wijl4")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Camera3D"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -226.0
+offset_top = -63.0
+offset_right = 226.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "LAAAAAAA"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RayCast3D" type="RayCast3D" parent="Camera3D"]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 0.0109754, 0.0249474, -1.11242)
+target_position = Vector3(0, 0, -1)
+collide_with_areas = true
+debug_shape_custom_color = Color(0.880878, 0.230867, 0.881022, 1)
+debug_shape_thickness = 5
