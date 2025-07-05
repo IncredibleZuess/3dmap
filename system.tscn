@@ -1,19 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://dtg6c7ifwv255"]
+[gd_scene load_steps=6 format=3 uid="uid://dtg6c7ifwv255"]
 
-[ext_resource type="Shader" uid="uid://b65ir1uqrpdh2" path="res://Planet.tres" id="1_ftbrq"]
-[ext_resource type="Shader" uid="uid://blch4vgc2c4oy" path="res://Clouds.tres" id="2_h7vta"]
+[ext_resource type="Shader" uid="uid://blhsa13n7p5uq" path="res://Clouds.tres" id="2_h7vta"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_3jqtu"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_dkeu3"]
-render_priority = 0
-shader = ExtResource("1_ftbrq")
-shader_parameter/Sun_Color = Color(0.743334, 0.131432, 0.296724, 1)
-shader_parameter/FloatParameter = 0.005
-shader_parameter/FloatParameter2 = 0.005
-
 [sub_resource type="SphereMesh" id="SphereMesh_pn48t"]
-material = SubResource("ShaderMaterial_dkeu3")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_t3gny"]
 render_priority = 0
@@ -33,6 +24,7 @@ gravity_scale = 0.0
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00402939, 3.8147e-08, 0.00324577)
 shape = SubResource("SphereShape3D_3jqtu")
+debug_color = Color(3.65794e-06, 0.585005, 0.779059, 0.42)
 
 [node name="Planet" type="MeshInstance3D" parent="RigidBody3D/CollisionShape3D"]
 transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 0, 0, 0)
@@ -40,4 +32,5 @@ mesh = SubResource("SphereMesh_pn48t")
 
 [node name="Clouds" type="MeshInstance3D" parent="RigidBody3D/CollisionShape3D"]
 transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 0, 0, 0)
+visible = false
 mesh = SubResource("SphereMesh_i1ka3")

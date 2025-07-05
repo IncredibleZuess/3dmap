@@ -6,9 +6,11 @@
 [node name="Map" type="Node3D"]
 script = ExtResource("1_c7s6e")
 size = 10
-limit = 100000
+limit = 1000
 
 [node name="SOL" type="Node3D" parent="."]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="SOL"]
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.952889, 0.303318, 0, -0.303318, 0.952889, 0, 5.3223, 8.33447)
