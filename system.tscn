@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://dtg6c7ifwv255"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_3jqtu"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_i1ka3"]
+
+[node name="System" type="Node3D"]
+
+[node name="RigidBody3D" type="RigidBody3D" parent="."]
+gravity_scale = 0.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00402939, 3.8147e-08, 0.00324577)
+shape = SubResource("SphereShape3D_3jqtu")
+debug_color = Color(3.65794e-06, 0.585005, 0.779059, 0.42)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D/CollisionShape3D"]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 0, 0, 0)
+mesh = SubResource("SphereMesh_i1ka3")
